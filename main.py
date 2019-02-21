@@ -62,6 +62,7 @@ class KBTest(unittest.TestCase):
              solver: solver of the game
              timeout: time out in seconds. Default 5 seconds
         """
+
         try:
             self.pool.apply_async(self.solve, [solver,]).get(timeout)
             self.assertTrue(solver.gm.isWon())
@@ -95,7 +96,7 @@ class KBTest(unittest.TestCase):
         th.setWinningCondition(required, 'hanoi_all_forbidden.txt')
         self.assertFalse(th.isWon())
 
-        solver = SolverDFS(th,((),(),(1,2,3)))
+        solver = SolverDFS_2(th,((),(),(1,2,3)))
 
         self.runPlayXSteps(solver, [
             # [step, expected game state]
@@ -114,7 +115,7 @@ class KBTest(unittest.TestCase):
         th.setWinningCondition(required, 'hanoi_all_forbidden.txt')
         self.assertFalse(th.isWon())
 
-        solver = SolverDFS(th, ((),(),(1,2,3)))
+        solver = SolverDFS_2(th, ((),(),(1,2,3)))
         self.runSolve(solver)
 
     def test04_BFS_Hanoi(self):

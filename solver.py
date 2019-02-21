@@ -13,7 +13,6 @@ class UninformedSolver(object):
         currentState (GameState): the GameState object to hold the current game state.
         victoryCondition (object): the game state to search for
     """
-
     def __init__(self, gameMaster, victoryCondition):
         self.gm = gameMaster
         self.visited = dict()
@@ -43,6 +42,7 @@ class UninformedSolver(object):
         if self.currentState.state == self.victoryCondition:
             return True
         while not self.solveOneStep():
+
             pass
         if self.currentState.state == self.victoryCondition:
             return True
@@ -51,6 +51,7 @@ class UninformedSolver(object):
 
 
 class GameState(object):
+
 
     """
     A generic data structure capable of holding a representation of a game state.

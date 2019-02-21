@@ -30,7 +30,7 @@ def read_tokenize(file):
     Returns:
         A list of Facts and Rules.
     """
-    file = open(file, "r")
+    file = open(file, "r", encoding='UTF-8')
     elements = []
     current = ""
     skip = False
