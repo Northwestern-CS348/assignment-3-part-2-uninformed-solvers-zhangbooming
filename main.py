@@ -54,7 +54,7 @@ class KBTest(unittest.TestCase):
         except TimeoutError:
             raise Exception("Timed out: %s" % inspect.stack()[1][3])
 
-    def runSolve(self, solver, timeout=5):
+    def runSolve(self, solver, timeout=100):
         """
         Wrapper function; calls solve(..) with a timeout
 
@@ -96,7 +96,7 @@ class KBTest(unittest.TestCase):
         th.setWinningCondition(required, 'hanoi_all_forbidden.txt')
         self.assertFalse(th.isWon())
 
-        solver = SolverDFS_2(th,((),(),(1,2,3)))
+        solver = SolverDFS(th,((),(),(1,2,3)))
 
         self.runPlayXSteps(solver, [
             # [step, expected game state]
@@ -115,7 +115,7 @@ class KBTest(unittest.TestCase):
         th.setWinningCondition(required, 'hanoi_all_forbidden.txt')
         self.assertFalse(th.isWon())
 
-        solver = SolverDFS_2(th, ((),(),(1,2,3)))
+        solver = SolverDFS(th, ((),(),(1,2,3)))
         self.runSolve(solver)
 
     def test04_BFS_Hanoi(self):

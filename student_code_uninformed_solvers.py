@@ -1,7 +1,7 @@
 from queue import Queue
 from solver import *
 
-class SolverDFS(UninformedSolver):
+class SolverDFS_2(UninformedSolver):
     def __init__(self, gameMaster, victoryCondition):
         super().__init__(gameMaster, victoryCondition)
         self.stack = []
@@ -137,7 +137,7 @@ class SolverBFS(UninformedSolver):
         return False
 
 
-class SolverDFS_2(UninformedSolver):
+class SolverDFS(UninformedSolver):
     def __init__(self, gameMaster, victoryCondition):
         super().__init__(gameMaster, victoryCondition)
         self.stack = []
